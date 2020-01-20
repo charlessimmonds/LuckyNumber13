@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="model.js"></script>
+  </head>
+  <body>
+    <form>
+      <table>
+        <script>
+          var basket = readBasket();
+          var productDetails = getProductDetails();
+          for (var product in productDetails) {
+            if (basket[product] > 0) {
+              document.write('       <tr>\n');
+              document.write('         <td><img src="img/' + productDetails[product]["image"] + '" /></td>\n');
+              document.write('         <td>' + productDetails[product]["name"] + '</td>\n');
+              document.write('         <td>' + productDetails[product]["units"] + '</td>\n');
+              document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
+              document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 30px;" /></td>\n');
+              document.write('         <td><input name="change' + product + '" type="button" value="change quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value)" /></td>\n');
+              document.write('       </tr>\n');
+            }
+          }
+        </script>
+      </table>
+    </form>
+
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 100px;">
+      <script>
+        var totals = calculateTotals();
+        document.write('<p>Total ex VAT: ' + totals["totalnovat"] + ' includes VAT: ' + totals["vat"] + ' Total inc. VAT: ' + totals["total"] + '</p>\n');
+      </script>
+      <form>
+        <input type="button" name="continue" value="Continue Shopping" onclick="self.close();" />
+        <input type="button" name="clearbasket" value="Clear Basket" onclick="javascript:createEmptyBasket();self.close();" />
+        <input type="button" name="order" value="Order" onclick="window.open('order.html');self.close();" />
+      </form>
+    </div>
+  </body>
+</html>

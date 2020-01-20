@@ -1,0 +1,34 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script type="text/javascript" src="model.js"></script>
+  </head>
+  <body>
+    <form>
+      <table>
+        <script>
+          var productDetails = getProductDetails();
+          for (var product in productDetails) {
+            document.write('       <tr>\n');
+            document.write('         <td><img src="img/' + productDetails[product]["image"] + '" /></td>\n');
+            document.write('         <td>' + productDetails[product]["name"] + '</td>\n');
+            document.write('         <td>' + productDetails[product]["description"] + '</td>\n');
+            document.write('         <td>' + productDetails[product]["units"] + '</td>\n');
+            document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="" style="width: 30px;" /></td>\n');
+            document.write('         <td><input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value)" /></td>\n');
+            document.write('       </tr>\n');
+          }
+        </script>
+      </table>
+    </form>
+
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 50px;">
+      <form>
+        <input type="button" name="exit" value="Exit" onclick="window.close()" />
+        <input type="button" name="viewbasket" value="View Basket" onclick="window.open('basket.html')" />
+      </form>
+    </div>
+  </body>
+</html>
