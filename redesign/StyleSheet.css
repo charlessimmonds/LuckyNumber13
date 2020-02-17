@@ -22,6 +22,30 @@ h1 {
   top: 15vh;
   border-top: 2px solid DarkSeaGreen;
 }
+
+span.s2 {font-kerning: none}
+{
+  font: 24px Verdana;
+  color: #0f7001;
+  float:left;
+  position: absolute;
+  top:9vh;
+  left:10vw;
+}
+
+h2 {
+  margin: 0.0px 0.0px 16.0px 16.0px;
+  padding: 3vh 2vw;
+  text-align: center;
+  line-height: 26px;
+  font: 24px Georgia;
+  color: black;
+  -webkit-text-stroke: #fb0007;
+  position: relative;
+  top: 15vh;
+  border-top: 2px solid DarkSeaGreen;
+}
+
 .searchbar{
   position: absolute;
   top:10vh;
@@ -50,7 +74,7 @@ p.p3 {
   margin: 0.0px 0.0px 14.9px 0.0px;
   text-align: center;
   line-height: 22.0px;
-  font: 20.0px Times;
+  font: 14.0px Times;
   color: #0f7001;
   -webkit-text-stroke: #0f7001;
   position: fixed;
@@ -80,6 +104,16 @@ p.p3 {
   top:13vh;
   text-align: center;
   color: black;
+}
+.invoiceContainer {
+  position: absolute;
+  top:0vh;
+  bottom:0.5vh;
+  left:50vh;
+  right:50vh;
+  text-align: center;
+  color: black;
+  background-color: white;
 }
 .customer {
   position: absolute;
