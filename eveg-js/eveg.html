@@ -3,19 +3,137 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title></title>
   <meta name="Generator" content="Cocoa HTML Writer">
   <meta name="CocoaVersion" content="1671.4">
   <style type="text/css">
-    body {background-color: #adadad}
-    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 12.0px}
+    body {background-color: white}
+    /* p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 12.0px} */
     span.s1 {font-kerning: none}
+    .logo {
+      font: 55px Verdana;
+      color: #0f7001;
+      float:left;
+      position: absolute;
+      top:9vh;
+      left:10vw;
+    }
+    h1 {
+      margin: 0.0px 0.0px 16.0px 16.0px;
+      padding: 3vh 2vw;
+      text-align: center;
+      line-height: 26px;
+      font: 38px Georgia;
+      color: black;
+      -webkit-text-stroke: #fb0007;
+      position: relative;
+      top: 15vh;
+      border-top: 2px solid DarkSeaGreen;
+    }
+    .searchbar{
+      position: absolute;
+      top:10vh;
+      left:30%;
+    }
+    .searchbar input[type=text] {
+      padding: 6px;
+      margin-top: 8px;
+      font-size: 20px;
+      width: 40vw;
+      border: 2px solid LightGray;
+      border-radius: 5px 0px 0px 5px;
+    }
+    .searchbar button {
+      float: right;
+      padding: 6px 10px;
+      margin-top: 8px;
+      margin-right: 16px;
+      background: DarkSeaGreen;
+      font-size: 23px;
+      border: none;
+      border-radius: 0px 5px 5px 0px;
+      cursor: pointer;
+    }
+    p.p3 {
+      margin: 0.0px 0.0px 14.9px 0.0px;
+      text-align: center;
+      line-height: 22.0px;
+      font: 20.0px Times;
+      color: #0f7001;
+      -webkit-text-stroke: #0f7001;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+    .topnav {
+      overflow: hidden;
+      background-color: DarkSeaGreen;
+      padding-right: 10vw;
+    }
+    .topnav a {
+      float: right;
+      color: black;
+      text-align: center;
+      padding: 7px 20px;
+      text-decoration: none;
+      font: 17px Verdana;
+      border-left: 1px solid #e3eee3;
+    }
+    .topnav a:hover {
+      background-color: white;
+      color: #0f7001;
+    }
+    .container {
+      position: relative;
+      top:13vh;
+      text-align: center;
+      color: black;
+    }
+    .customer {
+      position: absolute;
+      top: 5vh;
+      right: 20vw;
+      font-size: 28px;
+      padding: 5vh 5vh;
+      border: 2px solid white;
+      border-radius: 10px;
+      background-color: White;
+    }
+
+
   </style>
 </head>
 <body>
-<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; text-align: center; line-height: 28.0px; font: 24.0px Times; color: #fb0007; -webkit-text-stroke: #fb0007"><span class="s1"><b>Welcome to eVeg!</b></span></h1>
-<h2 style="margin: 0.0px 0.0px 14.9px 0.0px; text-align: center; line-height: 22.0px; font: 18.0px Times; color: #0f7001; -webkit-text-stroke: #0f7001"><span class="s1"><b>© 2020 InterVeg Coventry Ltd. <br>
-Fresh produce from the Midland's green countryside.<span class="Apple-converted-space"> </span></b></span></h2>
-<p class="p3"><span class="s1"></span><br></p>
+  <div class="topnav">
+    <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
+    <a href="#news">Sign in</a>
+    <a href="#home">Register</a>
+  </div>
+  <div class = "logo">eVeg</div>
+  <div class = "searchbar">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  <h1><span class="s1"><b>Welcome to eVeg!</b></span></h1>
+  <div class="container">
+    <img src="image.jpg" style="height:55vh;width:100%;filter: blur(1px)opacity(50%);">
+    <div id ="shopnow" style="font:28px Georgia;position: absolute;top: 10vh;left: 20vw;width:20vw;padding: 5vh 5vh;border: 2px solid white;border-radius: 10px;color: #006400;background-color: White;">All fresh produce from the Midland's green countryside.
+      <br><br><a href="#" class="button" style="font:24px Georgia;color:white; border:2px solid #0f7001;border-radius: 5px;background-color: #0f7001;text-decoration: none;padding: 5px 30px;">Shop now!</a>
+    </div>
+    <div class="customer">Sign in to start shopping<br><br>
+      <div id='signin' style="font:20px Georgia;"> ----Already a customer?----<br><br>
+        <a href="#" class="button" style="font:24px Georgia;color:white; border:2px solid DarkSeaGreen;border-radius: 3px;background-color: DarkSeaGreen;text-decoration: none;padding: 5px 90px;">Sign in</a>
+        <br><br><br>----A fresher to eVeg?----<br><br>
+        <a href="#" class="button" style="font:24px Georgia;color:white; border:2px solid DarkSeaGreen;border-radius: 3px;background-color: DarkSeaGreen;text-decoration: none;padding: 5px 90px;">Register</a>
+        <br><br>
+      </div>
+    </div>
+  </div>
+  <p class="p3"><span class="s1"><b>© 2020 InterVeg Coventry Ltd. <br>
+  Fresh produce from the Midland's green countryside.<span class="Apple-converted-space"> </span></b></span></p>
+  <!-- <p class="p3"><span class="s1"></span><br></p> -->
 </body>
 </html>
