@@ -208,8 +208,33 @@ function getCardDetails() {
   return cardDetails;
 }
 
+
 function getCookieVariableValue(variable) {
   var value = "; " + document.cookie;
   var parts = value.split("; " + variable + "=");
   if (parts.length == 2) return parts.pop().split(";").shift()
+}
+
+function getCookie() {
+  var user = {};
+  user["username"] = getCookieVariableValue('username');
+  return user;
+}
+
+function checkuser() {
+  var user = getCookie();
+  if (user["username"] != "" && user["username"] != null) {
+    alert("Welcome, "+user["username"]);
+  } else {
+    user = prompt("Please enter your username:","");
+    if (user != "" && user != null) {
+      document.cookie = "username="+user+";path=/";
+    }
+    window.location ="";
+  }
+}
+
+function logout() {
+  document.cookie = "username=;path=/";
+  window.location = "eveg.html";
 }

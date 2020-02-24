@@ -3,6 +3,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <meta http-equiv="Content-Style-Type" content="text/css">
+  <script type="text/javascript" src="model.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Welcome to eVeg landing page!</title>
   <meta name="Generator" content="Cocoa HTML Writer">
@@ -136,12 +137,12 @@
     }
   </style>
 </head>
-<body>
+<body onload="checkuser();">
   <div class="topnav">
     <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
-    <a href="#signout">Sign out!</a>
-    <a href="#myaccount">My Account</a>
-    <a href="#myorders">My Orders</a>
+    <a href="javascript:logout();">Sign out!</a>
+    <a><script>var user = getCookie();document.write('Hi, '+user["username"]);</script></a>
+    <a href="order.html">The Order</a>
     <a href="#About">About</a>
   </div>
   <div class = "logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img src="Logo.png" style="width:10vh;height:10vh; position:relative; top:2vh;">eVeg</a></div>
