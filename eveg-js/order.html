@@ -99,13 +99,14 @@
       text-align:center;
       width:150px;
       height:50px;
-      margin: 30px 70px;
+      margin-left: 10vw;
+      margin-right: 5vw;
       padding: 5px 5px;
       border: 2px solid DarkSeaGreen;
       border-radius: 10px;
       color: black;
       background-color: DarkSeaGreen;
-      margin-top: 50px;
+
     }
     </style>
   </head>
@@ -435,13 +436,14 @@
        </tr>
        <tr>
          <td>
+           <br>
            Card Number: <br><input type="text" name="cardnumber" id="cardnumber" value="" placeholder="0000-0000-0000-0000" pattern="[0-9]{16}" required/>
          </td>
        </tr>
        <tr>
          <td>
-           Expiry Date:
-           <select name="year" id="year" style="padding:8px;width:10%;height:5vh;position:absolute; bottom:18vh;left:12vw;" required/>
+           <br>Expiry Date:
+           <select name="year" id="year" style="padding:8px;width:3vw;height:5vh;position:absolute; bottom:10vh;left:17vw;" required onchange="myyear()"/>
               <option>yy</option>
               <option value="20">20</option>
               <option value="21">21</option>
@@ -453,8 +455,8 @@
               <option value="27">27</option>
               <option value="28">28</option>
            </select>
-            <p style="position:absolute; bottom:18vh;left:18vw;">/</p>
-           <select name="month" id="month" style="padding:8px;width:10%;height:5vh;position:absolute; bottom:18vh;left:19vw;" required onchange="if(parseInt(document.getElementById('year').value,10)<21)this.value='03';"/>
+            <p style="font-size: 38px;position:absolute; bottom:8vh;left:15vw;">/</p>
+           <select name="month" id="month" style="padding:8px;width:3vw;height:5vh;position:absolute; bottom:10vh;left:10vw;" required onchange="myyear()"/>
               <option>mm</option>
               <option value="01" >01</option>
               <option value="02">02</option>
@@ -473,6 +475,7 @@
        </tr>
        <tr>
          <td style="text-align: center;">
+           <br><br>
            <input type="button" name="cancel" value="Back to shop" onclick="window.location.href = 'shop.html';" />
            <input type="submit" name="proceed" value="Pay Securely" onclick="setName();setAddress();setCardDetails();"/>
          </td>
@@ -480,5 +483,18 @@
       </table>
     </form>
   </div>
+  <script>
+    function myyear() {
+      var d = new Date();
+      var n = d.getFullYear();
+      var m = d.getMonth();
+      var x = document.getElementById("month").value;
+      if(parseInt(document.getElementById('year').value,10)<21){
+        document.getElementById("month").value='03';
+      } else {
+        document.getElementById("month").value = x;
+      }
+    }
+  </script>
   </body>
 </html>
