@@ -120,6 +120,16 @@
     </div>
     <div class = "logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img src="Logo.png" style="width:10vh;height:10vh; position:relative; top:2vh;">eVeg</a></div>
     <h1><span class="s1"><b>Basket</b></span></h1>
-
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 200px;">
+      <script>
+        var totals = calculateTotals();
+        document.write('<p> Total ex VAT: ' + totals["totalnovat"] + ' includes VAT: ' + totals["vat"] + ' Total inc. VAT: ' + totals["total"] + '</p>\n');
+      </script>
+      <form>
+        <input type="button" name="continue" value="Continue Shopping" onclick="self.close();" />
+        <input type="button" name="clearbasket" value="Clear Basket" onclick="javascript:createEmptyBasket();self.close();" />
+        <input type="button" name="order" value="Order" onclick="window.open('order.html');self.close();" />
+      </form>
+    </div>
   </body>
 </html>
