@@ -156,10 +156,10 @@
       </table>
     </form>
 
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px;">
+    <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
       <script>
         var totals = calculateTotals();
-        document.write('<p> Total ex VAT: ' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".")+3) + ' includes VAT: ' + totals["vat"].substring(0, totals["vat"].indexOf(".")+3) + ' Total inc. VAT: ' + totals["total"].substring(0, totals["total"].indexOf(".")+3) + '</p>\n');
+        document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".")+3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".")+3) + '</p> <h2>Total inc. VAT:</h2><h3> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".")+3) + '</h3>\n');
       </script>
       <form>
         <input id="button1" type="button" name="continue" value="Continue Shopping" onclick="window.location.href='shop3.html';" style="width: auto;" />
