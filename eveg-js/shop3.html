@@ -185,33 +185,37 @@
     <a  href="basket2.html"><img id="trolley" src="trolley.png" class="card-img-top" style="width=25%; height=50%"></a>
     <h2>Basket</h2>
 </div><br>
+<div id="main-contain" class="container">
 <form>
-    <table>
-        <script>
-            var productDetails = getProductDetails();
-            for (var product in productDetails) {
-                document.write('<div class="col-sm-4">\n' +
-                    '          <div class="card" style="width: 18rem;">\n' +
-                    '          <img src="https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/1554407573/GettyImages-594378391.jpg?itok=E-pVzSn7" class="card-img-top">\n' +
-                    '          <div class="card-body">\n' +
-                    '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
-                    '            <p class="card-text">' + productDetails[product]["description"] + '</p>\n' +
-                    '             <input id="number" type="number" value="0">' +
-                    '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value)" />' +
-                    '          </div>\n' +
-                    '        </div>\n' +
-                    '      </div>')
 
-
-
+    <script>
+        var productDetails = getProductDetails();
+        var i = 0;
+        for (var product in productDetails) {
+            if((i%3)==0) {
+                document.write('<div class="row">')
             }
-        </script>
-    </table>
+            document.write('<div class="col-sm-4">\n' +
+                '          <div class="card" style="width: 18rem;">\n' +
+                '          <img src="https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/1554407573/GettyImages-594378391.jpg?itok=E-pVzSn7" class="card-img-top">\n' +
+                '          <div class="card-body">\n' +
+                '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
+                '            <p class="card-text">' + productDetails[product]["description"] + '</p>\n' +
+                '             <input id="number" type="number" value="0">' +
+                '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value)" />' +
+                '          </div>\n' +
+                '        </div>\n' +
+                '      </div>')
+            if((i%3)==2) {
+                document.write('</div>')
+            }            
+            i++;
+        }
+    </script>
+
 </form>
+</div>
 
-
-<p class="p3"><span class="s1"><b>© 2020 InterVeg Coventry Ltd. <br>
-  Fresh produce from the Midland's green countryside.<span class="Apple-converted-space"> </span></b></span></p>
 
 </body>
 </html>
