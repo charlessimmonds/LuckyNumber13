@@ -201,10 +201,10 @@
                 '          <img src="img/' + productDetails[product]["image"] + '" class="card-img-top"/>\n'+
                 '          <div class="card-body">\n' +
                 '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
-                '            <p class="card-text">' + productDetails[product]["description"] + '</p>\n' +
+                '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div>In Basket: '+ getProductQuantity(product) +' </div>\n' +
                 '             <input name="' + product + '" id="' + product + '" type="number" value="0" />\n' +
-                '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value)" />' +
-                '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 )"/>\n'+
+                '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
+                '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/>\n'+
                 '          </div>\n' +
                 '        </div>\n' +
                 '      </div>')
