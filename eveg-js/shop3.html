@@ -1,10 +1,217 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="Content-Style-Type" content="text/css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Welcome to eVeg landing page!</title>
+    <meta name="Generator" content="Cocoa HTML Writer">
+    <meta name="CocoaVersion" content="1671.4">
+    <style type="text/css">
+        body {background-color: #f8f8f8}
+        /* p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; text-align: center; line-height: 14.0px; font: 12.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 12.0px} */
+        span.s1 {font-kerning: none}
+        .logo {
+            float:left;
+            position: absolute;
+            top:6vh;
+            left:8vw;
+            text-align: center;
+        }
+        h1 {
+            margin: 0.0px 0.0px 16.0px 16.0px;
+            padding: 3vh 2vw;
+            text-align: center;
+            line-height: 26px;
+            font: 38px Georgia;
+            color: black;
+            -webkit-text-stroke: #fb0007;
+            position: relative;
+            top: 15vh;
+            border-top: 2px solid DarkSeaGreen;
+        }
+        .searchbar{
+            position: absolute;
+            top:10vh;
+            left:30%;
+        }
+        .searchbar input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 20px;
+            width: 40vw;
+            border: 2px solid LightGray;
+            border-radius: 5px 0px 0px 5px;
+        }
+        .searchbar button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: DarkSeaGreen;
+            font-size: 23px;
+            border: none;
+            border-radius: 0px 5px 5px 0px;
+            cursor: pointer;
+        }
+        p.p3 {
+            margin: 0.0px 0.0px 14.9px 0.0px;
+            text-align: center;
+            line-height: 22.0px;
+            font: 20.0px Times;
+            color: #0f7001;
+            -webkit-text-stroke: #0f7001;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .topnav {
+            overflow: hidden;
+            background-color: DarkSeaGreen;
+            padding-right: 10vw;
+        }
+        .topnav a {
+            float: right;
+            color: black;
+            text-align: center;
+            padding: 7px 20px;
+            text-decoration: none;
+            font: 17px Verdana;
+            border-left: 1px solid #e3eee3;
+        }
+        .topnav a:hover {
+            background-color: white;
+            color: #0f7001;
+        }
+        #container {
+            position: relative;
+            top:13vh;
+            left:15vw;
+            text-align: center;
+            color: black;
+        }
+        #customer {
+            position: absolute;
+            top: 5vh;
+            right: 20vw;
+            font-size: 28px;
+            padding: 5vh 5vh;
+            border: 2px solid white;
+            border-radius: 10px;
+            background-color: White;
+        }
+        #shopnow{
+            font:28px Georgia;
+            text-align:center;
+            position: absolute;
+            top: 35vh;
+            left:20vw;
+            width:24vw;
+            height:37vh;
+            padding: 5vh 5vh;
+            border: 2px solid #0f7001;
+            border-radius: 10px 0px 0px 10px;
+            color: white;
+            background-color: #0f7001;
+        }
+        /* #shopnow:hover{
+          border:3px solid #0f7001;
+          border-style:groove;
+        } */
+        #basket {
+            top:4vh;
+            right:2vh;
+            position:absolute;
+            border:8px solid #0f7001;
+        }
+        .alignright {
+            float: right;
+        }
+        #trolley {
+            width: 40%;
+            height: 50%;
+        }
+        h2 {
+            right: 2vh;
+        }
+        #val {
+            left:0vh;
+        }
+        #shopnow a{
+            font:24px Georgia;color:#0f7001; border:2px solid white;border-radius: 50px;background-color: white;text-decoration: none;padding: 5px 30px;
+        }
+        #shopnow a:hover {
+            border:8px solid DarkSeaGreen;
+        }
+        #offer{
+            position: absolute;
+            right:20vw;
+            top:35vh;
+            width: 31vw;
+            height:47vh;
+            border: 2px solid #0f7001;
+            border-radius: 0px 10px 10px 0px;
+            text-align: center;
+        }
+        #main-contain{
+            margin-top:160px;
+            height:1000px;
+            background-color:#f0f2f0;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div class="topnav">
+    <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
+    <a href="#signout">Sign out!</a>
+    <a href="#myaccount">My Account</a>
+    <a href="#myorders">My Orders</a>
+    <a href="#About">About</a>
+</div>
+<div class = "logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img src="Logo.png" style="width:10vh;height:10vh; position:relative; top:2vh;">eVeg</a></div>
+<div class = "searchbar">
+    <form action="/action_page.php">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+</div>
+<h1><span class="s1"><b>Shop here!</b></span></h1>
+<div id="basket" class="float-right card" style="width: 12rem;">
+    <a  href="basket2.html"><img id="trolley" src="trolley.png" class="card-img-top" style="width=25%; height=50%"></a>
+    <h2>Basket</h2>
+</div><br>
+<form>
+    <table>
+        <script>
+            var productDetails = getProductDetails();
+            for (var product in productDetails) {
+                document.write('<div class="col-sm-4">\n' +
+                    '          <div class="card" style="width: 18rem;">\n' +
+                    '          <img src="https://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/1554407573/GettyImages-594378391.jpg?itok=E-pVzSn7" class="card-img-top">\n' +
+                    '          <div class="card-body">\n' +
+                    '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
+                    '            <p class="card-text">' + productDetails[product]["description"] + '</p>\n' +
+                    '             <input id="number" type="number" value="0">' +
+                    '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value)" />' +
+                    '          </div>\n' +
+                    '        </div>\n' +
+                    '      </div>')
+
+
+
+            }
+        </script>
+    </table>
+</form>
+
+
+<p class="p3"><span class="s1"><b>© 2020 InterVeg Coventry Ltd. <br>
+  Fresh produce from the Midland's green countryside.<span class="Apple-converted-space"> </span></b></span></p>
+
 </body>
 </html>
