@@ -9,7 +9,7 @@
     <script type="text/javascript" src="model.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <title>Welcome to eVeg landing page!</title>
+    <title>Welcome to eVeg Shop page!</title>
     <meta name="Generator" content="Cocoa HTML Writer">
     <meta name="CocoaVersion" content="1671.4">
     <style type="text/css">
@@ -204,6 +204,7 @@
                 '            <p class="card-text">' + productDetails[product]["description"] + '</p>\n' +
                 '             <input name="' + product + '" id="' + product + '" type="number" value="0" />\n' +
                 '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value)" />' +
+                '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 )"/>\n'+
                 '          </div>\n' +
                 '        </div>\n' +
                 '      </div>')
