@@ -155,9 +155,9 @@
         document.write('<p> Total ex VAT: ' + totals["totalnovat"] + ' includes VAT: ' + totals["vat"] + ' Total inc. VAT: ' + totals["total"] + '</p>\n');
       </script>
       <form>
-        <input type="button" name="continue" value="Continue Shopping" onclick="self.close();" />
+        <input type="button" name="continue" value="Continue Shopping" onclick="window.location.href='shop3.html';" />
         <input type="button" name="clearbasket" value="Clear Basket" onclick="javascript:createEmptyBasket();self.close();" />
-        <input type="button" name="order" value="Order" onclick="window.open('order.html');self.close();" />
+        <input type="button" name="order" value="Order" onclick="window.location.href='order.html';" />
       </form>
     </div>
   </body>
