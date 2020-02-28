@@ -108,6 +108,12 @@
       background-color: DarkSeaGreen;
       margin-top: 50px;
     }
+    table{
+      table-layout: fixed;
+      width: 100%;
+      border-collapse: collapse;
+      border: 3px solid DarkSeaGreen;
+    }
     </style>
   </head>
   <body style="background-color: #f8f8f8;" onload="createEmptyOrder();">
@@ -120,7 +126,30 @@
     </div>
     <div class = "logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img src="Logo.png" style="width:10vh;height:10vh; position:relative; top:2vh;">eVeg</a></div>
     <h1><span class="s1"><b>Basket</b></span></h1>
-    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 200px;">
+
+
+    <form>
+      <table style="margin-top:200px; margin-left:10px; margin-right:30px;">
+        <script>
+          var basket = readBasket();
+          var productDetails = getProductDetails();
+          for (var product in productDetails) {
+            if (basket[product] > 0) {
+              document.write('       <tr>\n');
+              document.write('         <td><img src="img/' + productDetails[product]["image"] + '" /></td>\n');
+              document.write('         <td>' + productDetails[product]["name"] + '</td>\n');
+              document.write('         <td>' + productDetails[product]["units"] + '</td>\n');
+              document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
+              document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
+              document.write('         <td><input name="change' + product + '" type="button" value="change quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value)" /></td>\n');
+              document.write('       </tr>\n');
+            }
+          }
+        </script>
+      </table>
+    </form>
+
+    <div style="position: fixed; bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px;">
       <script>
         var totals = calculateTotals();
         document.write('<p> Total ex VAT: ' + totals["totalnovat"] + ' includes VAT: ' + totals["vat"] + ' Total inc. VAT: ' + totals["total"] + '</p>\n');
