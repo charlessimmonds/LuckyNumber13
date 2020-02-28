@@ -114,6 +114,9 @@
       border-collapse: collapse;
       border: 3px solid DarkSeaGreen;
     }
+    #button1{
+
+    }
     </style>
   </head>
   <body style="background-color: #f8f8f8;" onload="createEmptyOrder();">
@@ -136,7 +139,7 @@
           for (var product in productDetails) {
             if (basket[product] > 0) {
               document.write('       <tr>\n');
-              document.write('         <td><img src="img/' + productDetails[product]["image"] + '" /></td>\n');
+              document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
               document.write('         <td>' + productDetails[product]["name"] + '</td>\n');
               document.write('         <td>' + productDetails[product]["units"] + '</td>\n');
               document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
@@ -155,7 +158,7 @@
         document.write('<p> Total ex VAT: ' + totals["totalnovat"] + ' includes VAT: ' + totals["vat"] + ' Total inc. VAT: ' + totals["total"] + '</p>\n');
       </script>
       <form>
-        <input type="button" name="continue" value="Continue Shopping" onclick="window.location.href='shop3.html';" />
+        <input id="button1" type="button" name="continue" value="Continue Shopping" onclick="window.location.href='shop3.html';" />
         <input type="button" name="clearbasket" value="Clear Basket" onclick="javascript:createEmptyBasket();self.close();" />
         <input type="button" name="order" value="Order" onclick="window.location.href='order.html';" />
       </form>
