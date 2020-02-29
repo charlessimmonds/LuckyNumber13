@@ -69,7 +69,7 @@
             margin-top: 8px;
             margin-right: 16px;
             background: DarkSeaGreen;
-            font-size: 23px;
+            font-size: 22px;
             border: none;
             border-radius: 0px 5px 5px 0px;
             cursor: pointer;
@@ -147,10 +147,10 @@
           border-style:groove;
         } */
         #basket {
-            top: 4vh;
-            right: 2vh;
+            top: 4.7vh;
+            right: 1.3vh;
             position: absolute;
-            border: 8px solid #0f7001;
+            border: 4px solid #0f7001;
         }
 
         .alignright {
@@ -212,7 +212,7 @@
         <a href="#About">About</a>
     </div>
     <div class="logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img
-                src="Logo.png" style="width:10vh;height:10vh; position:relative; top:2vh;">eVeg</a></div>
+                src="Logo.png" style="width:10vh;height:10vh; position:relative;">eVeg</a></div>
     <div class="searchbar">
         <form action="/action_page.php">
             <input type="text" placeholder="Search.." name="search">
@@ -220,9 +220,9 @@
         </form>
     </div>
     <h1><span class="s1"><b>Shop here!</b></span></h1>
-    <div id="basket" class="float-right card" style="width: 12rem;">
+    <div id="basket" class="float-right card" style="width: 8rem; text-align: center; padding: 5px;">
         <a href="basket2.html"><img id="trolley" src="trolley.png" class="card-img-top"
-                style="width=25%; height=50%"></a>
+                style="width:7vh; height:5vh;"></a>
         <h2>Basket</h2>
     </div><br>
     <div id="main-contain" class="container">
@@ -240,9 +240,9 @@
                         '          <img src="img/' + productDetails[product]["image"] + '" class="card-img-top"/>\n' +
                         '          <div class="card-body">\n' +
                         '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
-                        '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div>In Basket: ' + getProductQuantity(product) + ' </div>\n' +
-                        '             <input name="' + product + '" id="' + product + '" type="number" value="0" />\n' +
-                        '            <input name="add' + product + '" type="button" value="add to basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
+                        '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
+                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" value="0";/>\n' +
+                        '            <input style="margin-top:10px; name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
                         '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/>\n' +
                         '          </div>\n' +
                         '        </div>\n' +
