@@ -207,7 +207,7 @@
     <div class="topnav">
         <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
         <a href="#signout">Sign out!</a>
-        <a href="#myaccount">My Account</a>
+        <a href="account.html">My Account</a>
         <a href="myorders.html">My Orders</a>
         <a href="about.html">About</a>
     </div>
@@ -241,7 +241,7 @@
                         '          <div class="card-body">\n' +
                         '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
                         '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
-                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" value="0";/>\n' +
+                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="50" value="0";/>\n' +
                         '            <input style="margin-top:10px; name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
                         '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/>\n' +
                         '          </div>\n' +
