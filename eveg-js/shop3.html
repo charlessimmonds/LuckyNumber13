@@ -241,7 +241,7 @@
                         '          <div class="card-body">\n' +
                         '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
                         '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
-                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="50" value="0";/>\n' +
+                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="99" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="0";/>\n' +
                         '            <input style="margin-top:10px; name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
                         '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/>\n' +
                         '          </div>\n' +
@@ -252,6 +252,25 @@
                     }
                     i++;
                 }
+            </script>
+
+            <script>
+                function maxLengthCheck(object) {
+                    if (object.value.length > object.max.length)
+                        object.value = object.value.slice(0, object.max.length)
+                }
+
+                function isNumeric(evt) {
+                    var theEvent = evt || window.event;
+                    var key = theEvent.keyCode || theEvent.which;
+                    key = String.fromCharCode(key);
+                    var regex = /[0-9]|\./;
+                    if (!regex.test(key)) {
+                        theEvent.returnValue = false;
+                        if (theEvent.preventDefault) theEvent.preventDefault();
+                    }
+                }
+
             </script>
 
         </form>

@@ -182,13 +182,33 @@
             document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
             document.write('         <td> <p style="font-size:25px;">' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + ' </p> <p>' + basket[product] * 100 + 'g </p></td>\n');
             document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"] + '</p></td>\n');
-            document.write('         <td><input name="' + product + '" id="' + product + '" type="number" min="0" max="50" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
+            document.write('         <td><input name="' + product + '" id="' + product + '" type="number" min="0" max="999" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
             document.write('         <td> <p><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></p>\n')
             document.write('         <p><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></p></td>\n');
             document.write('       </tr>\n');
           }
         }
       </script>
+
+      <script>
+        function maxLengthCheck(object) {
+          if (object.value.length > object.max.length)
+            object.value = object.value.slice(0, object.max.length)
+        }
+
+        function isNumeric(evt) {
+          var theEvent = evt || window.event;
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode(key);
+          var regex = /[0-9]|\./;
+          if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+          }
+        }
+
+      </script>
+
     </table>
   </form>
 
