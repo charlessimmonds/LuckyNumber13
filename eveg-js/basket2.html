@@ -78,6 +78,16 @@
       border-bottom: 2px solid gray;
     }
 
+    h3 {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      width: 100%;
+      text-align: center;
+      font: 26px Georgia;
+      color: black;
+      -webkit-text-stroke: #fb0007;
+    }
+
     #payment form table {
       font: 20px Georgia;
     }
@@ -89,9 +99,9 @@
     input[type=text],
     [type=number] {
       -moz-appearance: none;
-      font-size: 18px;
-      width: 25vw;
-      padding: 16px 20px;
+      font-size: 20px;
+      text-align: center;
+      padding: 20px 5px;
       margin-bottom: 12px;
       display: inline-block;
       border: 1px solid #ccc;
@@ -122,18 +132,19 @@
       text-align: center;
       width: 150px;
       height: 50px;
-      margin: 30px 70px;
       padding: 5px 5px;
+      margin-right: 20px;
       border: 2px solid DarkSeaGreen;
       border-radius: 10px;
       color: black;
       background-color: DarkSeaGreen;
-      margin-top: 50px;
     }
 
     table {
       table-layout: fixed;
-      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
       border-collapse: collapse;
       border: 3px solid DarkSeaGreen;
     }
@@ -160,16 +171,20 @@
       <script>
         var basket = readBasket();
         var productDetails = getProductDetails();
+        document.write('<tr style="border-bottom: 1px solid DarkSeaGreen";>\n');
+        document.write('<td><h3></h3></td>\n');
+        document.write('<td> <h3>Product</h3></td>\n');
+        document.write('<td> <h3> Cost Per Item</h3> </td>\n');
+        document.write('<td> <h3> Quantity</h3> </td>\n');
         for (var product in productDetails) {
           if (basket[product] > 0) {
-            document.write('       <tr style="text-align:center";>\n');
+            document.write('       <tr style="text-align:center; border-bottom: 1px solid DarkSeaGreen";";>\n');
             document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
-            document.write('         <td>' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + '</td>\n');
-            document.write('         <td>' + basket[product] * 100 + 'g</td>\n');
-            document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
-            document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
-            document.write('         <td><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></td>\n')
-            document.write('         <td><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></td>\n');
+            document.write('         <td> <p style="font-size:25px;">' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + ' </p> <p>' + basket[product] * 100 + 'g </p></td>\n');
+            document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"] + '</p></td>\n');
+            document.write('         <td><input name="' + product + '" id="' + product + '" type="number" min="0" max="50" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
+            document.write('         <td> <p><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></p>\n')
+            document.write('         <p><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></p></td>\n');
             document.write('       </tr>\n');
           }
         }
@@ -180,9 +195,9 @@
   <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
     <script>
       var totals = calculateTotals();
-      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
     </script>
-    <form>
+    <form style="margin-top: 50px; margin-bottom: 15px;">
       <input id="button1" type="button" name="continue" value="Continue Shopping"
         onclick="window.location.href='shop3.html';" style="width: auto;" />
       <input type="button" name="clearbasket" value="Clear Basket"
