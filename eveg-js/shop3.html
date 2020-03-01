@@ -239,7 +239,7 @@
                         '          <div class="card" style="width: 18rem;">\n' +
                         '          <img src="img/' + productDetails[product]["image"] + '" class="card-img-top"/>\n' +
                         '          <div class="card-body">\n' +
-                        '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
+                        '            <h5 class="card-title"><strong>' + productDetails[product]["name"] + '</strong></h5>\n' +
                         '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
                         '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="99" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="0";/>\n' +
                         '            <input style="margin-top:10px; name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +

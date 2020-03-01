@@ -217,7 +217,16 @@
   <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
     <script>
       var totals = calculateTotals();
-      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+      // document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+      // document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + 
+      // '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + 
+      // totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+
+      document.write('<h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + 
+      totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3> <p> Total ex VAT: </p><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + 
+      '</p><p> VAT to add: </p><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> \n');
+
+      
     </script>
     <form style="margin-top: 50px; margin-bottom: 15px;">
       <input id="button1" type="button" name="continue" value="Continue Shopping"
