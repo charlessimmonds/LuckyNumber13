@@ -149,6 +149,14 @@
       border: 3px solid DarkSeaGreen;
     }
 
+    .earlyTotal {
+      position: relative;
+      top: 10vh;
+      left: 43%;
+      text-align: center;
+      mix-blend-mode: multiply;
+    }
+
     #button1 {}
   </style>
 </head>
@@ -164,8 +172,12 @@
   <div class="logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img
         src="Logo.png" style="width:10vh;height:10vh; position:relative;">eVeg</a></div>
   <h1><span class="s1"><b>Basket</b></span></h1>
-
-
+  <div class="earlyTotal">
+    <script>
+      var totals = calculateTotals();
+      document.write('<h3 style="text-align:left;">Total inc. VAT:</h3><p style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</p> \n');
+    </script>
+  </div>
   <form>
     <table style="margin-top:200px; margin-bottom: 75px;">
       <script>
@@ -223,7 +235,7 @@
       // totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
 
       document.write('<h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + 
-      totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3> <p> Total ex VAT: </p><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + 
+      totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h2> <p> Total ex VAT: </p><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + 
       '</p><p> VAT to add: </p><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> \n');
 
       
