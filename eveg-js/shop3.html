@@ -209,20 +209,14 @@
             /* Set a default minimum width */
             margin-left: -125px;
             /* Divide value of min-width by 2 */
-            background-color: #333;
-            /* Black background color */
-            color: #fff;
-            /* White text color */
+            background-color: darkseagreen;
+            color: black;
             text-align: center;
-            /* Centered text */
             border-radius: 2px;
-            /* Rounded borders */
             padding: 16px;
-            /* Padding */
             position: fixed;
             /* Sit on top of the screen */
             z-index: 1;
-            /* Add a z-index if needed */
             left: 50%;
             /* Center the snackbar */
             bottom: 30px;
@@ -333,7 +327,7 @@
                     if ((i % 3) == 0) {
                         document.write('<div class="row">')
                     }
-                    if(!getProductQuantity(product)) {
+                    if (!getProductQuantity(product)) {
                         quant = 0;
                     } else {
                         quant = getProductQuantity(product);
