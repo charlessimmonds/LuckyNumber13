@@ -240,7 +240,7 @@
                         '          <img src="img/' + productDetails[product]["image"] + '" class="card-img-top"/>\n' +
                         '          <div class="card-body">\n' +
                         '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
-                        '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
+                        '            <p class="card-text"> &pound' + productDetails[product]["price"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
                         '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="99" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="0";/>\n' +
                         '            <input style="margin-top:10px; name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
                         '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/>\n' +
