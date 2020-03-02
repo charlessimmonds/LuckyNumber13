@@ -5,6 +5,7 @@
 <head>
   <title>Invoice</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="icon" href="Logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
@@ -122,7 +123,7 @@
       text-align: center;
       width: 150px;
       height: 50px;
-      margin: 30px 70px;
+      margin: 30px 10px;
       padding: 5px 5px;
       border: 2px solid DarkSeaGreen;
       border-radius: 10px;
@@ -144,7 +145,7 @@
 
 <body style="background-color: #f8f8f8;" onload="createEmptyOrder();">
   <div class="topnav">
-    <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
+    <a href="about.html" style="border-right:1px solid #e3eee3">Contact</a>
     <a href="#signout">Sign out</a>
     <a href="account.html">My Account</a>
     <a href="myorders.html">My Orders</a>
@@ -164,20 +165,23 @@
       basket = readBasket();
       productDetails = getProductDetails();
 
+      document.write('<br>');
       document.write('<br><h2> Products </h2>\n');
       for (var product in basket) {
         if (basket[product] > 0) {
           document.write('<p>' + productDetails[product]["name"] + ' : &pound;' + productDetails[product]["price"] + '</p>\n');
         }
       }
+      document.write('<br>');
       var totals = calculateTotals();
       document.write('<br><h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
 
+      document.write('<br>');
       cardDetails = getCardDetails();
       document.write('<br><h2>Paid by </h2><p>' + cardDetails['cardtype'] + ' ' + cardDetails['cardnumber'].substr(-4) + ' (only last four digits given)</p>\n');
     </script>
   </div>
-  <form style="margin-left: 100px;" ;>
+  <form style="margin-left: 90px;" ;>
     <input id="button1" type="button" name="continue" value="Back To Shop" onclick="window.location.href='shop3.html';"
       style="width: auto;" />
   </form>

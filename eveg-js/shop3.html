@@ -4,6 +4,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta http-equiv="Content-Style-Type" content="text/css">
+    <link rel="icon" href="Logo.png">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -205,7 +206,7 @@
 
 <body>
     <div class="topnav">
-        <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
+        <a href="about.html" style="border-right:1px solid #e3eee3">Contact Us</a>
         <a href="#signout">Sign out</a>
         <a href="account.html">My Account</a>
         <a href="myorders.html">My Orders</a>
@@ -226,7 +227,7 @@
         <h2>Basket</h2>
     </div><br>
     <div id="main-contain" class="container">
-        <form>
+        <form autocomplete="off">
 
             <script>
                 var productDetails = getProductDetails();
@@ -240,8 +241,8 @@
                         '          <img src="img/' + productDetails[product]["image"] + '" class="card-img-top"/>\n' +
                         '          <div class="card-body">\n' +
                         '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
-                        '            <p class="card-text">' + productDetails[product]["description"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
-                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="50" value="0";/>\n' +
+                        '            <p class="card-text"> &pound' + productDetails[product]["price"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + getProductQuantity(product) + ' </div>\n' +
+                        '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="99" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="0";/>\n' +
                         '            <input style="margin-top:10px; name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" />' +
                         '            <input name="removeall' + product + '" type="button" value="Remove All" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/>\n' +
                         '          </div>\n' +
@@ -252,6 +253,25 @@
                     }
                     i++;
                 }
+            </script>
+
+            <script>
+                function maxLengthCheck(object) {
+                    if (object.value.length > object.max.length)
+                        object.value = object.value.slice(0, object.max.length)
+                }
+
+                function isNumeric(evt) {
+                    var theEvent = evt || window.event;
+                    var key = theEvent.keyCode || theEvent.which;
+                    key = String.fromCharCode(key);
+                    var regex = /[0-9]|\./;
+                    if (!regex.test(key)) {
+                        theEvent.returnValue = false;
+                        if (theEvent.preventDefault) theEvent.preventDefault();
+                    }
+                }
+
             </script>
 
         </form>

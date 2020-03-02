@@ -5,6 +5,7 @@
 <head>
   <title>Your Basket</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="icon" href="Logo.png">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
@@ -78,6 +79,16 @@
       border-bottom: 2px solid gray;
     }
 
+    h3 {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      width: 100%;
+      text-align: center;
+      font: 26px Georgia;
+      color: black;
+      -webkit-text-stroke: #fb0007;
+    }
+
     #payment form table {
       font: 20px Georgia;
     }
@@ -89,9 +100,9 @@
     input[type=text],
     [type=number] {
       -moz-appearance: none;
-      font-size: 18px;
-      width: 25vw;
-      padding: 16px 20px;
+      font-size: 20px;
+      text-align: center;
+      padding: 20px 5px;
       margin-bottom: 12px;
       display: inline-block;
       border: 1px solid #ccc;
@@ -122,20 +133,29 @@
       text-align: center;
       width: 150px;
       height: 50px;
-      margin: 30px 70px;
       padding: 5px 5px;
+      margin-right: 20px;
       border: 2px solid DarkSeaGreen;
       border-radius: 10px;
       color: black;
       background-color: DarkSeaGreen;
-      margin-top: 50px;
     }
 
     table {
       table-layout: fixed;
-      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      width: 90%;
       border-collapse: collapse;
       border: 3px solid DarkSeaGreen;
+    }
+
+    .earlyTotal {
+      position: relative;
+      top: 10vh;
+      left: 43%;
+      text-align: center;
+      mix-blend-mode: multiply;
     }
 
     #button1 {}
@@ -144,7 +164,7 @@
 
 <body style="background-color: #f8f8f8;" onload="createEmptyOrder();">
   <div class="topnav">
-    <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
+    <a href="about.html" style="border-right:1px solid #e3eee3">Contact Us</a>
     <a href="#signout">Sign out</a>
     <a href="account.html">My Account</a>
     <a href="myorders.html">My Orders</a>
@@ -153,8 +173,12 @@
   <div class="logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img
         src="Logo.png" style="width:10vh;height:10vh; position:relative;">eVeg</a></div>
   <h1><span class="s1"><b>Basket</b></span></h1>
-
-
+  <div class="earlyTotal">
+    <!-- <script>
+      var totals = calculateTotals();
+      document.write('<h3 style="text-align:left;">Total inc. VAT:</h3><p style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</p> \n');
+    </script> -->
+  </div>
   <form>
     <table style="margin-top:200px; margin-bottom: 75px;">
       <script>
@@ -162,27 +186,63 @@
         var productDetails = getProductDetails();
         for (var product in productDetails) {
           if (basket[product] > 0) {
-            document.write('       <tr style="text-align:center";>\n');
+            document.write('<tr style="border-bottom: 1px solid DarkSeaGreen";>\n');
+            document.write('<td><h3></h3></td>\n');
+            document.write('<td> <h3>Product</h3></td>\n');
+            document.write('<td> <h3> Price </h3> </td>\n');
+            document.write('<td> <h3> Price Per Item</h3> </td>\n');
+            document.write('<td> <h3> Quantity</h3> </td>\n');
+            document.write('       <tr style="text-align:center; border-bottom: 1px solid DarkSeaGreen";";>\n');
             document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
-            document.write('         <td>' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + '</td>\n');
-            document.write('         <td>' + basket[product] * 100 + 'g</td>\n');
-            document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
-            document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
-            document.write('         <td><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></td>\n')
-            document.write('         <td><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></td>\n');
+            document.write('         <td> <p style="font-size:25px;">' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + ' </p> <p>' + basket[product] * 100 + 'g </p></td>\n');
+            document.write('         <td>  <p style="font-size:25px;">&pound;' + productDetails[product]["price"] * basket[product] + '</p></td>\n')
+            document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"] + '</p></td>\n');
+            document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"] * basket[product] + '</p></td>\n');
+            document.write('         <td><input name="' + product + '" id="' + product + '" type="number" min="0" max="999" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
+            document.write('         <td> <p><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></p>\n')
+            document.write('         <p><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></p></td>\n');
             document.write('       </tr>\n');
           }
         }
       </script>
+
+      <script>
+        function maxLengthCheck(object) {
+          if (object.value.length > object.max.length)
+            object.value = object.value.slice(0, object.max.length)
+        }
+
+        function isNumeric(evt) {
+          var theEvent = evt || window.event;
+          var key = theEvent.keyCode || theEvent.which;
+          key = String.fromCharCode(key);
+          var regex = /[0-9]|\./;
+          if (!regex.test(key)) {
+            theEvent.returnValue = false;
+            if (theEvent.preventDefault) theEvent.preventDefault();
+          }
+        }
+
+      </script>
+
     </table>
   </form>
 
   <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
     <script>
       var totals = calculateTotals();
-      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+      // document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) +
+      // '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + 
+      // totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+
+      //document.write('<h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' +
+      //  totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h2> <p> Total ex VAT: </p><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) +
+      //  '</p><p> VAT to add: </p><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> \n');
+
+
     </script>
-    <form>
+    <form style="margin-top: 50px; margin-bottom: 15px;">
       <input id="button1" type="button" name="continue" value="Continue Shopping"
         onclick="window.location.href='shop3.html';" style="width: auto;" />
       <input type="button" name="clearbasket" value="Clear Basket"
