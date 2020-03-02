@@ -301,11 +301,7 @@
         </form>
     </div>
     <h1><span class="s1"><b>Shop here!</b></span></h1>
-    <div id="basket" class="float-right card" style="width: 8rem; text-align: center; padding: 5px;">
-        <a href="basket2.html"><img id="trolley" src="trolley.png" class="card-img-top"
-                style="width:7vh; height:5vh;"></a>
-        <h2>Basket</h2>
-    </div><br>
+
     <div id='snackbar'> Item Number Changed </div>
     <div id="main-contain" class="container">
         <form autocomplete="off">
@@ -321,7 +317,36 @@
                     setTimeout(function () { x.className = x.className.replace("show", ""); }, 1500);
                 }
                 var productDetails = getProductDetails();
+                var basket2 = readBasket();
                 var i = 0;
+
+                var basket = readBasket();
+                var check = false;
+                for (var product2 in productDetails) {
+                    if (basket[product2] > 0) {
+                        check = true;
+                        break;
+
+                    }
+                    }
+                console.log(check);
+                opacity = 1;
+                var href_content = "href=\"basket2.html\""
+
+                if(check===false){
+                    opacity = 0.3;
+                    href_content = ""
+                }
+
+
+
+
+
+                document.write('<div id="basket" class="float-right card" style="width: 8rem; text-align: center; padding: 5px; opacity: ' + opacity +'">\n' +
+                    '        <a '+ href_content + '><img id="trolley" src="img/Basket.png" class="card-img-top"\n' +
+                    '                style="width:10vh; height:10vh;"></a>\n' +
+                    '    </div>')
+
                 myFunction();
                 for (var product in productDetails) {
                     if ((i % 3) == 0) {
