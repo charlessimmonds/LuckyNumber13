@@ -1,27 +1,33 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 
-  <head>
-    <title>Your Basket</title>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="model.js"></script>
-    <style type="text/css">
+<head>
+  <title>Your Basket</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="model.js"></script>
+  <style type="text/css">
     .logo {
-      float:left;
+      float: left;
       position: absolute;
-      top:6vh;
-      left:43%;
+      top: 6vh;
+      left: 43%;
       text-align: center;
       mix-blend-mode: multiply;
     }
+
     .topnav {
       overflow: hidden;
       background-color: DarkSeaGreen;
       padding-right: 10vw;
     }
+
     .topnav a {
       float: right;
       color: black;
@@ -31,10 +37,12 @@
       font: 17px Verdana;
       border-left: 1px solid #e3eee3;
     }
+
     .topnav a:hover {
       background-color: white;
       color: #0f7001;
     }
+
     h1 {
       margin: 0.0px 0.0px 16.0px 16.0px;
       padding: 3vh 10vw;
@@ -47,16 +55,19 @@
       top: 15vh;
       border-top: 2px solid DarkSeaGreen;
     }
+
     #payment {
-      margin: 5vh 1vw;;
+      margin: 5vh 1vw;
+      ;
       padding: 3vh 3vw;
       position: relative;
-      top:10vh;
-      left:8vw;
+      top: 10vh;
+      left: 8vw;
       width: 50%;
       background-color: white;
     }
-    h2{
+
+    h2 {
       padding-bottom: 10px;
       width: 100%;
       text-align: left;
@@ -66,44 +77,51 @@
       -webkit-text-stroke: #fb0007;
       border-bottom: 2px solid gray;
     }
+
     #payment form table {
       font: 20px Georgia;
     }
-    #payment form table tr{
+
+    #payment form table tr {
       line-height: 1.8;
     }
-    input[type=text],[type=number]{
-      -moz-appearance:none;
+
+    input[type=text],
+    [type=number] {
+      -moz-appearance: none;
       font-size: 18px;
       width: 25vw;
       padding: 16px 20px;
-      margin-bottom: 12px ;
+      margin-bottom: 12px;
       display: inline-block;
       border: 1px solid #ccc;
       border-radius: 4px;
       box-sizing: border-box;
     }
-    select{
+
+    select {
       -moz-appearance: none;
-    	-webkit-appearance: none;
-    	appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
       background-color: white;
-    	display: block;
-    	font-size: 18px;
-    	font-family: sans-serif;
-    	color: #444;
-    	line-height: 1;
-    	width: 100%;
-    	box-sizing: border-box;
-      margin-bottom: 12px ;
-    	border: 1px solid #ccc;
-    	border-radius: 4px;
+      display: block;
+      font-size: 18px;
+      font-family: sans-serif;
+      color: #444;
+      line-height: 1;
+      width: 100%;
+      box-sizing: border-box;
+      margin-bottom: 12px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
     }
-    input[type=button],[type=submit]{
-      font:18px Georgia;
-      text-align:center;
-      width:150px;
-      height:50px;
+
+    input[type=button],
+    [type=submit] {
+      font: 18px Georgia;
+      text-align: center;
+      width: 150px;
+      height: 50px;
       margin: 30px 70px;
       padding: 5px 5px;
       border: 2px solid DarkSeaGreen;
@@ -112,61 +130,66 @@
       background-color: DarkSeaGreen;
       margin-top: 50px;
     }
-    table{
+
+    table {
       table-layout: fixed;
       width: 100%;
       border-collapse: collapse;
       border: 3px solid DarkSeaGreen;
     }
-    #button1{
 
-    }
-    </style>
-  </head>
-  <body style="background-color: #f8f8f8;" onload="createEmptyOrder();">
-    <div class="topnav">
-      <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
-      <a href="#signout">Sign out!</a>
-      <a href="#myaccount">My Account</a>
-      <a href="#myorders">My Orders</a>
-      <a href="#About">About</a>
-    </div>
-    <div class = "logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img src="Logo.png" style="width:10vh;height:10vh; position:relative; top:2vh;">eVeg</a></div>
-    <h1><span class="s1"><b>Basket</b></span></h1>
+    #button1 {}
+  </style>
+</head>
+
+<body style="background-color: #f8f8f8;" onload="createEmptyOrder();">
+  <div class="topnav">
+    <a href="#contact" style="border-right:1px solid #e3eee3">Contact</a>
+    <a href="#signout">Sign out</a>
+    <a href="account.html">My Account</a>
+    <a href="myorders.html">My Orders</a>
+    <a href="about.html">About</a>
+  </div>
+  <div class="logo"><a href="eveg.html" style="text-decoration: none;font: 55px Verdana;color: #0f7001;"><img
+        src="Logo.png" style="width:10vh;height:10vh; position:relative;">eVeg</a></div>
+  <h1><span class="s1"><b>Basket</b></span></h1>
 
 
-    <form>
-      <table style="margin-top:200px; margin-left:10px; margin-right:30px;">
-        <script>
-          var basket = readBasket();
-          var productDetails = getProductDetails();
-          for (var product in productDetails) {
-            if (basket[product] > 0) {
-              document.write('       <tr>\n');
-              document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
-              document.write('         <td>' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length-6) + '</td>\n');
-              document.write('         <td>' + basket[product]*100 + 'g</td>\n');
-              document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
-              document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
-              document.write('         <td><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></td>\n')
-              document.write('         <td><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></td>\n');
-              document.write('       </tr>\n');
-            }
-          }
-        </script>
-      </table>
-    </form>
-
-    <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
+  <form>
+    <table style="margin-top:200px; margin-bottom: 75px;">
       <script>
-        var totals = calculateTotals();
-        document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".")+3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".")+3) + '</p> <h2>Total inc. VAT:</h2><h3> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".")+3) + '</h3>\n');
+        var basket = readBasket();
+        var productDetails = getProductDetails();
+        for (var product in productDetails) {
+          if (basket[product] > 0) {
+            document.write('       <tr style="text-align:center";>\n');
+            document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
+            document.write('         <td>' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + '</td>\n');
+            document.write('         <td>' + basket[product] * 100 + 'g</td>\n');
+            document.write('         <td>&pound;' + productDetails[product]["price"] + '</td>\n');
+            document.write('         <td><input name="' + product + '" id="' + product + '" type="text" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
+            document.write('         <td><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></td>\n')
+            document.write('         <td><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></td>\n');
+            document.write('       </tr>\n');
+          }
+        }
       </script>
-      <form>
-        <input id="button1" type="button" name="continue" value="Continue Shopping" onclick="window.location.href='shop3.html';" style="width: auto;" />
-        <input type="button" name="clearbasket" value="Clear Basket" onclick="javascript:createEmptyBasket(); window.location.reload()" />
-        <input type="button" name="order" value="Order" onclick="window.location.href='order.html';" />
-      </form>
-    </div>
-  </body>
+    </table>
+  </form>
+
+  <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
+    <script>
+      var totals = calculateTotals();
+      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+    </script>
+    <form>
+      <input id="button1" type="button" name="continue" value="Continue Shopping"
+        onclick="window.location.href='shop3.html';" style="width: auto;" />
+      <input type="button" name="clearbasket" value="Clear Basket"
+        onclick="javascript:createEmptyBasket(); window.location.reload()" />
+      <input type="button" name="order" value="Order" onclick="window.location.href='order.html';" />
+    </form>
+  </div>
+</body>
+
 </html>
