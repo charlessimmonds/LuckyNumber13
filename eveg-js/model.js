@@ -161,6 +161,10 @@ function getName() {
   return name;
 }
 
+function setPressed(pressed) {
+  document.cookie = "pressed=" + pressed + ";path=/"
+}
+
 function setAddress() {
   document.cookie = "number=" + document.getElementById('number').value + ";path=/";
   document.cookie = "street=" + document.getElementById('street').value + ";path=/";
