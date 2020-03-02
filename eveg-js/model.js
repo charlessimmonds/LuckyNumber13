@@ -3,7 +3,7 @@ function getProductDetails() {
   productDetails["carrots"] = {};
   productDetails["carrots"]["image"] = "carrots-table_popidar-ss.jpg";
   productDetails["carrots"]["name"] = "Carrots (100g)";
-  productDetails["carrots"]["description"] = "100g loose Carrots. Keep refrigerated"; 
+  productDetails["carrots"]["description"] = "100g loose Carrots. Keep refrigerated";
   productDetails["carrots"]["units"] = "1kg";
   productDetails["carrots"]["price"] = 0.99;
 
@@ -45,7 +45,7 @@ function getProductDetails() {
   productDetails["potatoes"] = {};
   productDetails["potatoes"]["image"] = "potatoes.jpg";
   productDetails["potatoes"]["name"] = "Potatoes (100g)";
-  productDetails["potatoes"]["description"] = "100g Potates. Store in cool dry place";
+  productDetails["potatoes"]["description"] = "100g Potatoes. Store in cool dry place";
   productDetails["potatoes"]["units"] = "1kg";
   productDetails["potatoes"]["price"] = 0.99;
 
@@ -127,29 +127,29 @@ function createEmptyBasket() {
   products = getProductList();
   var productcount = products.length;
   for (var i = 0; i < productcount; i++) {
-    document.cookie=products[i] + "=0;path=/";
+    document.cookie = products[i] + "=0;path=/";
   }
 }
 
 function createEmptyOrder() {
-  document.cookie="title=;path=/";
-  document.cookie="firstname=;path=/";
-  document.cookie="surname=;path=/";
-  document.cookie="number=;path=/";
-  document.cookie="street=;path=/";
-  document.cookie="postcode=;path=/";
-  document.cookie="city=;path=/";
-  document.cookie="country=;path=/";
-  document.cookie="cardtype=;path=/";
-  document.cookie="cardnumber=;path=/";
-  document.cookie="month=;path=/";
-  document.cookie="year=;path=/";
+  document.cookie = "title=;path=/";
+  document.cookie = "firstname=;path=/";
+  document.cookie = "surname=;path=/";
+  document.cookie = "number=;path=/";
+  document.cookie = "street=;path=/";
+  document.cookie = "postcode=;path=/";
+  document.cookie = "city=;path=/";
+  document.cookie = "country=;path=/";
+  document.cookie = "cardtype=;path=/";
+  document.cookie = "cardnumber=;path=/";
+  document.cookie = "month=;path=/";
+  document.cookie = "year=;path=/";
 }
 
 function setName() {
-  document.cookie="title=" + document.getElementById('title').value + ";path=/";
-  document.cookie="firstname=" + document.getElementById('firstname').value + ";path=/";
-  document.cookie="surname=" + document.getElementById('surname').value + ";path=/";
+  document.cookie = "title=" + document.getElementById('title').value + ";path=/";
+  document.cookie = "firstname=" + document.getElementById('firstname').value + ";path=/";
+  document.cookie = "surname=" + document.getElementById('surname').value + ";path=/";
 }
 
 function getName() {
@@ -162,11 +162,11 @@ function getName() {
 }
 
 function setAddress() {
-  document.cookie="number=" + document.getElementById('number').value + ";path=/";
-  document.cookie="street=" + document.getElementById('street').value + ";path=/";
-  document.cookie="postcode=" + document.getElementById('postcode').value + ";path=/";
-  document.cookie="city=" + document.getElementById('city').value + ";path=/";
-  document.cookie="country=" + document.getElementById('country').value + ";path=/";
+  document.cookie = "number=" + document.getElementById('number').value + ";path=/";
+  document.cookie = "street=" + document.getElementById('street').value + ";path=/";
+  document.cookie = "postcode=" + document.getElementById('postcode').value + ";path=/";
+  document.cookie = "city=" + document.getElementById('city').value + ";path=/";
+  document.cookie = "country=" + document.getElementById('country').value + ";path=/";
 }
 
 function getAddress() {
@@ -182,20 +182,20 @@ function getAddress() {
 
 function setCardDetails() {
   if (document.getElementById('solo').checked) {
-    document.cookie="cardtype=Solo;path=/";
+    document.cookie = "cardtype=Solo;path=/";
   }
   else if (document.getElementById('switch').checked) {
-    document.cookie="cardtype=Switch;path=/";
+    document.cookie = "cardtype=Switch;path=/";
   }
   else if (document.getElementById('mastercard').checked) {
-    document.cookie="cardtype=Mastercard;path=/";
+    document.cookie = "cardtype=Mastercard;path=/";
   }
   else if (document.getElementById('visa').checked) {
-    document.cookie="cardtype=Visa;path=/";
+    document.cookie = "cardtype=Visa;path=/";
   }
-  document.cookie="cardnumber=" + document.getElementById('cardnumber').value + ";path=/";
-  document.cookie="month=" + document.getElementById('month').value + ";path=/";
-  document.cookie="year=" + document.getElementById('year').value + ";path=/";
+  document.cookie = "cardnumber=" + document.getElementById('cardnumber').value + ";path=/";
+  document.cookie = "month=" + document.getElementById('month').value + ";path=/";
+  document.cookie = "year=" + document.getElementById('year').value + ";path=/";
 }
 
 function getCardDetails() {

@@ -306,7 +306,7 @@
                 style="width:7vh; height:5vh;"></a>
         <h2>Basket</h2>
     </div><br>
-    <div id='snackbar'> Item Added </div>
+    <div id='snackbar'> Item Number Changed </div>
     <div id="main-contain" class="container">
         <form autocomplete="off">
 
@@ -337,6 +337,7 @@
                         '          <img src="img/' + productDetails[product]["image"] + '" class="card-img-top"/>\n' +
                         '          <div class="card-body">\n' +
                         '            <h5 class="card-title">' + productDetails[product]["name"] + '</h5>\n' +
+                        '            <p class="card-text">' + productDetails[product]["description"] + '</p>\n' +
                         '            <p class="card-text"> &pound' + productDetails[product]["price"] + '</p>  <div style="margin-bottom:10px;">In Basket: ' + quant + ' </div>\n' +
                         '             <input style="padding-left:5px; name="' + product + '" id="' + product + '" type="number" min="0" max ="99" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="0";/>\n' +
                         '            <input style="margin-top:10px; id="test" name="add' + product + '" type="button" value="Add To Basket" onclick="javascript:addToBasket(\'' + product + '\', document.getElementById(\'' + product + '\').value); myFunction(); window.location.reload()" />' +
