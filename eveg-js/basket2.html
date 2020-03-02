@@ -174,25 +174,16 @@
         src="Logo.png" style="width:10vh;height:10vh; position:relative;">eVeg</a></div>
   <h1><span class="s1"><b>Basket</b></span></h1>
   <div class="earlyTotal">
-    <script>
+    <!-- <script>
       var totals = calculateTotals();
       document.write('<h3 style="text-align:left;">Total inc. VAT:</h3><p style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</p> \n');
-    </script>
+    </script> -->
   </div>
   <form>
     <table style="margin-top:200px; margin-bottom: 75px;">
       <script>
         var basket = readBasket();
         var productDetails = getProductDetails();
-<<<<<<< HEAD
-=======
-        document.write('<tr style="border-bottom: 1px solid DarkSeaGreen";>\n');
-        document.write('<td><h3></h3></td>\n');
-        document.write('<td> <h3>Product</h3></td>\n');
-        document.write('<td> <h3> Cost Per Item</h3> </td>\n');
-        document.write('<td> <h3> Total Item Cost</h3> </td>\n');
-        document.write('<td> <h3> Quantity</h3> </td>\n');
->>>>>>> 29b9904d126e7c27e948b443fe828e197eaf8f44
         for (var product in productDetails) {
           if (basket[product] > 0) {
             document.write('<tr style="border-bottom: 1px solid DarkSeaGreen";>\n');
@@ -206,7 +197,7 @@
             document.write('         <td> <p style="font-size:25px;">' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + ' </p> <p>' + basket[product] * 100 + 'g </p></td>\n');
             document.write('         <td>  <p style="font-size:25px;">&pound;' + productDetails[product]["price"] * basket[product] + '</p></td>\n')
             document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"] + '</p></td>\n');
-            document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"]*basket[product] + '</p></td>\n');
+            document.write('         <td> <p style="font-size:25px;">&pound;' + productDetails[product]["price"] * basket[product] + '</p></td>\n');
             document.write('         <td><input name="' + product + '" id="' + product + '" type="number" min="0" max="999" onkeypress="return isNumeric(event)" oninput="maxLengthCheck(this)" value="' + basket[product] + '" style="width: 100px;" /></td>\n');
             document.write('         <td> <p><input name="change' + product + '" type="button" value="Change Quantity" onclick="javascript:changeProductQuantity(\'' + product + '\', document.getElementById(\'' + product + '\').value); window.location.reload()" style="width: auto;" /></p>\n')
             document.write('         <p><input name="removeall' + product + '" type="button" value="Clear Item" onclick="javascript:changeProductQuantity(\'' + product + '\', 0 ); window.location.reload()"/></p></td>\n');
@@ -240,16 +231,16 @@
   <div style="bottom: 0; left: 0; right: 0; height: 200px; margin-left:100px; margin-top:10px;">
     <script>
       var totals = calculateTotals();
-      // document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
-      // document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + 
+      document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
+      // document.write('<h2> Total ex VAT: </h2><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) +
       // '</p><h2> VAT to add: </h2><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> <h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + 
       // totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h3>\n');
 
-      document.write('<h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' + 
-      totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h2> <p> Total ex VAT: </p><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) + 
-      '</p><p> VAT to add: </p><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> \n');
+      //document.write('<h2>Total inc. VAT:</h2><h3 style="text-align:left;"> &pound;' +
+      //  totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</h2> <p> Total ex VAT: </p><p>&pound;' + totals["totalnovat"].substring(0, totals["totalnovat"].indexOf(".") + 3) +
+      //  '</p><p> VAT to add: </p><p>&pound;' + totals["vat"].substring(0, totals["vat"].indexOf(".") + 3) + '</p> \n');
 
-      
+
     </script>
     <form style="margin-top: 50px; margin-bottom: 15px;">
       <input id="button1" type="button" name="continue" value="Continue Shopping"
