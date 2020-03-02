@@ -319,7 +319,6 @@
                 var productDetails = getProductDetails();
                 var basket2 = readBasket();
                 var i = 0;
-<<<<<<< HEAD
 
                 var basket = readBasket();
                 var check = false;
@@ -349,12 +348,10 @@
                     '    </div>')
 
                 myFunction();
-=======
                 if (getCookieVariableValue("pressed") == 1) {
                     myFunction();
                 }
                 setPressed(0);
->>>>>>> 90ec3c817b80564d3c123ca57198fb4b04843874
                 for (var product in productDetails) {
                     if ((i % 3) == 0) {
                         document.write('<div class="row">')
