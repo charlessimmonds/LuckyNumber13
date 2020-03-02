@@ -186,24 +186,26 @@
         src="Logo.png" style="width:10vh;height:10vh; position:relative;">eVeg</a></div>
   <h1><span class="s1"><b>Basket</b></span></h1>
   <div class="earlyTotal">
-    <!-- <script>
-      var totals = calculateTotals();
-      document.write('<h3 style="text-align:left;">Total inc. VAT:</h3><p style="text-align:left;"> &pound;' + totals["total"].substring(0, totals["total"].indexOf(".") + 3) + '</p> \n');
-    </script> -->
+    <script>
+      var productDetails = getProductDetails();
+      if (productDetails.length == 0) {
+        document.write('<h3> (Empty) </h3>');
+      }
+    </script>
   </div>
   <form>
     <table style="margin-top:200px; margin-bottom: 75px;">
       <script>
         var basket = readBasket();
         var productDetails = getProductDetails();
+        document.write('<tr style="border-bottom: 1px solid DarkSeaGreen";>\n');
+        document.write('<td><h3></h3></td>\n');
+        document.write('<td> <h3>Product</h3></td>\n');
+        document.write('<td> <h3> Price </h3> </td>\n');
+        document.write('<td> <h3> Price Per Item</h3> </td>\n');
+        document.write('<td> <h3> Quantity</h3> </td>\n');
         for (var product in productDetails) {
           if (basket[product] > 0) {
-            document.write('<tr style="border-bottom: 1px solid DarkSeaGreen";>\n');
-            document.write('<td><h3></h3></td>\n');
-            document.write('<td> <h3>Product</h3></td>\n');
-            document.write('<td> <h3> Price </h3> </td>\n');
-            document.write('<td> <h3> Price Per Item</h3> </td>\n');
-            document.write('<td> <h3> Quantity</h3> </td>\n');
             document.write('       <tr style="text-align:center; border-bottom: 1px solid DarkSeaGreen";";>\n');
             document.write('         <td><img src="img/' + productDetails[product]["image"] + '" class="card-img-top" /></td>\n');
             document.write('         <td> <p style="font-size:25px;">' + productDetails[product]["name"].substring(0, productDetails[product]["name"].length - 6) + ' </p> <p>' + basket[product] * 100 + 'g </p></td>\n');
